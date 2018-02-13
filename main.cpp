@@ -2,7 +2,6 @@
 #include <fstream>
 #include <vector>
 #include <regex>
-#include <zconf.h>
 #include "headers/Lexer.hpp"
 #include "headers/Operand.hpp"
 #include "headers/AbstractVM.hpp"
@@ -44,7 +43,7 @@ void read_from_file(char* file_name)
 int read_input() {
 
     std::string line;
-    auto *VM = new AbstractVM(0);
+    AbstractVM *VM = new AbstractVM(0);
 
     std::cout << "Write correct command and " << name << " program will be started\n\n";
 
@@ -98,7 +97,6 @@ int main(int argc, char **argv) {
             }
         }
     }
-    sleep(15);
     return 0;
 }
 

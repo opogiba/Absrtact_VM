@@ -21,7 +21,7 @@ public:
 
     AbstractVM(AbstractVM const &) = delete;
 
-    ~AbstractVM();
+    virtual ~AbstractVM();
 
     void analyze_line(std::string line);
 

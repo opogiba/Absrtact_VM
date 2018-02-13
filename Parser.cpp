@@ -45,6 +45,7 @@ bool    Parser::check_comment(std::string comment) {
 
 Parser::eParserStatsus    Parser::parse_line(std::string line) {
 
+
     for (auto &token : tokens)
         delete token;
     tokens.clear();

@@ -8,15 +8,15 @@ AbstractVM::~AbstractVM()  {
     delete(parser);
     this->v_func.clear();
 
-//    for (IOperand const *operand: stack) {
-//        delete (operand);
-//        stack.pop();
-//    }
-
-    for (auto i = stack.end() - 1; i >= stack.begin(); --i) {
-        delete(*i);
+    for (IOperand const *operand: stack) {
+        delete (operand);
         stack.pop();
     }
+
+//    for (auto i = stack.end() - 1; i >= stack.begin(); --i) {
+//        delete(*i);
+//        stack.pop();
+//    }
 }
 
 // Start of the parsing
@@ -112,23 +112,15 @@ void AbstractVM::make_operation(Operand::eOperation op) {
             try {
                 stack.push(*left / *right);
             }
-            catch (std::exception &e)
-            {
-                delete(left);
-                delete(right);
+            catch (std::exception &e) {
                 throw ;
             }
         }
-        std::vector<Token *> a;
-        dump(a);
         if (op == Operand::MOD) {
             try {
                 stack.push(*left % *right);
             }
-            catch (std::exception &e)
-            {
-                delete(left);
-                delete(right);
+            catch (std::exception &e) {
                 throw ;
             }
         }
