@@ -13,9 +13,13 @@ AbstractVM::~AbstractVM()  {
         stack.pop();
     }
 
-//    for (auto i = stack.end() - 1; i >= stack.begin(); --i) {
-//        delete(*i);
-//        stack.pop();
+//    if (!stack.empty())
+//    {
+//        for (auto i = stack.end() - 1; i >= stack.begin(); --i) {
+//            printf("dsadasdsadasdsa\n");
+//            delete(*i);
+//            stack.pop();
+//        }
 //    }
 }
 
